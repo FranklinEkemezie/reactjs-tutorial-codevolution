@@ -178,3 +178,12 @@ REACTJS TUTORIAL (BASICS) #1 to #24
         next call. Therefore, whenever the new state depends on the old state, you are advised to pass a callback
         instead of the new state object. The callback should then return the new state. The previous state can be
         referenced as the first parameter of the callback and the second parameter of the callback is the `props`.
+
+# 12 - Destructing props and state.
+    Destructuring is an ES6 feature that makes it possible to unpack elements of an array or the properties of an
+    object into distinct variables.
+    Syntax:
+    >>> const {name, age) = person;         // assuming person = {name: 'Some name', age: 34, city: 'Some city'}
+    >>> const [count, step] = getNext();    // assuming getNext() returns [4, 3, true];
+    Destructuring improves code readability and hence, commonly used in React application especially in destructing
+    properties of a `props` or `state` variables.
