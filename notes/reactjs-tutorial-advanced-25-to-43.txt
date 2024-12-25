@@ -50,3 +50,30 @@ REACTJS TUTORIAL (ADVANCED) #25 to #43
         >>> export default React.memo(SomeComponent);
     Tip: React.memo, here, is a "higher order component" or HOC - components which accept other components are arguments
     and add a functionality to them.
+
+# 28 - Refs.
+    Refs makes it possible to access DOM nodes directly from a React. They provide a 'reference' to an HTML DOM element
+    in a React component.
+    To create a reference to a DOM node:
+        - create the 'ref' using React.createRef() method (usually in the constructor) assigned as a class property.
+            >>> this.refName = React.createRef();
+        - next, attach the ref created using the reserved "ref" prop in the HTML or JSX element setting it to the 'ref'.
+            >>> <input ref={this.refName} />
+        - you can then access the value any time using `this.refName.current`
+            >>> const inputEl = this.refName.current;
+    Another (a bit older) method of creating refs is using the "callback ref" approach:
+        - create a property to hold the "ref" (usually in the constructor).
+            >>> this.refEl = null;
+        - create a callback that sets the ref; the callback should accept one parameter - the DOM element to be
+        referenced - and then perform certain actions usually assigning it to the property holding the "ref".
+            >>> this.setCallbackRef = (element) => {
+                this.refEl = element;
+            }
+        - attach the callback reference to the element using the reserved "ref" props.
+            >>> <input type="text" ref={this.setCallbackRef} />
+        - you can now access the "ref" via `this.refEl`. It is important to check the value before proceeding with the
+        value of `this.refEl` as it could be null, if not set or if the component is unmounted.
+            >>> if (this.refEl) {
+                // perform some actions
+                const inputEl = this.refEl;
+            }
