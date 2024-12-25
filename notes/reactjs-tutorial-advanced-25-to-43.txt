@@ -21,3 +21,23 @@ REACTJS TUTORIAL (ADVANCED) #25 to #43
             ));
     A shorter syntax to <React.Fragment> is an empty tag: <> showing that the child components or JSX are not wrapped
     by a parent component or JSX. This shorter syntax, however, does not accept the unique "key" props.
+
+# 26 - Pure Components.
+    Pure components are class components which extend the `PureComponent` from React. While a regular component does not
+    implement the `shouldComponentUpdate` method (thus, returning `true` by default), a Pure component implements the
+    `shouldComponentUpdate` method with a shallow `props` and `state` comparison. By shallow comparison (SC), the
+    previous props (or state) and the current props (or state) are compared and true is returned when:
+        - both values are the same value and are of the same type (for primitive types e.g. strings, booleans, etc.); or
+        - both values reference (points to) the same object (for complex types e.g. arrays, objects, etc.).
+    Thus, a pure component only re-renders if and only if, there is a change in `props` or `state` determined by a
+    shallow comparison of the previous props (or state) and the current props (or state). Emphasis is made on the fact
+    that the comparison is "shallow", since if a `prop` of complex type (array, object, etc.) is modified (e.g. by
+    pushing to the array, or adding new property to the object), the reference to the object is not changed and the
+    `prop` is not considered to be any different, and the UI is not re-rendered. It is therefore, advised to always
+    return or set the state to a new object or array (for complex types) instead of mutating (i.e. modifying) it.
+    Tip: While Pure components seem to be very useful, it is safe to stick to the regular component and only use them in
+    scenarios where optimisation can be achieved by preventing unnecessary re-rendering.
+    Also, it is also very important to ensure that a component being pure does not prevent the child component from
+    re-rendering when necessary since if the parent component does not re-render, the child component will not re-render
+    even if it needs to. Ideally, the child components should be pure if the parent component is also pure. This helps
+    to avoid unexpected behaviour.
