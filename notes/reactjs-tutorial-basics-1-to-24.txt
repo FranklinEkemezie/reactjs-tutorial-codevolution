@@ -66,3 +66,11 @@ REACTJS TUTORIAL (BASICS) #1 to #24
         - The index.js, then renders the App component in the App.css
         - The App component in turn renders other components.
         That is: Your components -> App component -> index.js -> index.html
+
+# 4  - Components
+    A React component is basically a part of the React application. Components are reusable and can be modified to
+    display different information. A component is placed in a JavaScript file named as PascalCaseComponent.js.
+    Basically, components can be said to be in two category:
+    - stateless functional component - they are the usual JS functions returning HTML (or JSX as we shall soon see).
+    - stateful class component - they are the usual JS classes extending the Component class (imported from 'react')
+     with a render() method.
