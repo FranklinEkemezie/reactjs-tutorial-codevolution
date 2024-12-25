@@ -193,3 +193,33 @@ REACTJS TUTORIAL (BASICS) #1 to #24
     mouse hover, key press (up or down), input change, focus, load, etc. We may wish to run some codes when a particular
     event is fired (i.e. handle the event), we can do so using the event name (in camelCase) as attribute name and the
     event handler (a callback function) as the attribute value.
+
+# 14 - Binding Event Handlers
+    Binding Event Handlers is a direct consequence of how the `this` keyword works in JavaScript. When a method of
+    class component is used as the event handler, `this` becomes `undefined` and accessing the state or props, or
+    updating the state via any of `this.state`, `this.setState()`, `this.props` results in an error.
+    There are a couple of ways to resolve this issue:
+    - Bind the `this` keyword in the `render()` method: We can bind the `this` in the event handler to the
+    class component using the `bind()` method of a function.
+    Example:
+        >>> <button onClick={this.clickHandler.bind(this)}>Click Me</button>
+    - Passing an arrow function as the event handler which then calls the actual event handler
+    Example:
+        >>> <button onClick={() => this.clickHandler()}>Click Me</button>
+    - Binding the event handler in the `constructor()` (not in the `render()` method).
+    Example:
+        >>> constructor(props) {
+            super(props);
+
+            // ...
+
+            this.clickHandler = this.clickHandler.bind(this);
+
+            // ...
+        }
+    Tip: The last method is the most commonly used method since it is more efficient and performant since the first two
+     methods create a new function each time (the first, binding the `this` to provided argument and the second
+     creating a new arrow function) the UI is re-rendered while the binding happens once in the constructor.
+     It is also the official way to bind event handlers used in the React documentation.
+     - Another method is to use arrow function instead when declaring the event handler, and you won't have to worry
+     about binding the event handler to the class component.
