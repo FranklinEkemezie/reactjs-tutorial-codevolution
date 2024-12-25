@@ -24,3 +24,20 @@ REACTJS TUTORIAL (BASICS) #1 to #24
         - Routing
         - Redux
         - Utilities
+
+# 2 - Hello World
+    To run your very first React application, you need:
+    - Node.js
+    - Text editor - VSCode
+
+    You can create a React app using the command line tool - create react app (CRA):
+    Run
+        >>> npx create-react-app <name of project>
+    To run the command:
+    - Navigate to the project directory
+        >>> cd <name of project>
+    - Run the command to start the application:
+        >>> npm start
+    Another similar method to create a React app is by installing the create-react-app globally and then running it:
+        >>> npm install create-react-app -g
+            create-react-app <project_name>
