@@ -350,3 +350,22 @@ REACTJS TUTORIAL (BASICS) #1 to #24
     ## Error Handling: when there is an error during rendering, in a lifecycle method, or in the constructor of any
     child component.
         Examples: static getDerivedStateFromError and componentDidCatch.
+
+# 23 - Component Mounting Lifecycle Methods.
+    These methods are called when an instance of a component is being created and inserted into the DOM.
+    In the order of invocation, they are as follows:
+    - constructor(props) - called whenever a new component is created.
+        Dos:    initialize state, bind event handlers
+        Don'ts: cause side effects (e.g. HTTP requests).
+        Tip: always call super(props) to invoke the parent Component class.
+    - static getDerivedStateFromProps(props, state) - used when the state of the component depends on changes in props
+    over time. It should return the new state as an object or `null`.
+        Dos:    set the state.
+        Don'ts: cause side effects.
+    - render() - only required method. It must be a "pure" function, and it should return the JSX for the UI.
+        Dos:    read props & state and return JSX.
+        Don'ts: change the state, interact with DOM, make AJAX calls.
+        Tip: Here, control is passed to the children components so that their lifecycle methods which are executed.
+    - componentDidMount() - invoked immediately after a component and all its children components have been rendered
+    to the DOM.
+        Dos:    cause side effect, interact with the DOM, perform network (e.g. HTTP) requests.
