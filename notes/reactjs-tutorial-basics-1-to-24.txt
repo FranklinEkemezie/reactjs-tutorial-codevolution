@@ -279,3 +279,14 @@ REACTJS TUTORIAL (BASICS) #1 to #24
     optimization and efficient rendering as we will see in the next lesson. This is the reason why rendering a
     list - something which may seem trivial - is somehow a big deal in React applications.
 
+# 18 - Lists and Keys
+    React expects you to pass a unique "key" prop when rendering the item of a list. It could be any value - id, name,
+    phone_no - or anything that is unique across the list. This helps React to know which list item have changed so far,
+    or added, updated or deleted during rendering and helps in efficient UI rendering. When rendering a list which has
+    changed again, React compares the keys and renders the new or modified ones jumping the other list items.
+    - The "key" prop is not accessible in the `props` object and React gives a warning while returning `undefined` when
+    you try to access `props.key` in the child component. To access the "key" prop, you have to pass it as a separate
+    props, if need be.
+    - It is not also advisable to use the index of an array item as the unique "key" props since it is not stable and
+    may result in unpredictable results during rendering.
+
