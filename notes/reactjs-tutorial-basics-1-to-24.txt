@@ -303,3 +303,22 @@ REACTJS TUTORIAL (BASICS) #1 to #24
     - hash each list item or one or more of its properties to generate a unique key.
     Using index as key should always be your last resort, as even React uses that when you don't specify it, although it
     gives a warning.
+
+# 20 - Styling and CSS Basics
+    There are a couple of ways to style React components:
+    - CSS stylesheet - using the `className` attribute and specifying the class for some (imported) CSS stylesheet.
+    - Inline styling - using the `style` attribute and specifying an object using the CSS property (in camelCase) and
+        the CSS style value as the key-value pair.
+    - CSS Modules - CSS Modules slightly differ from the CSS stylesheet. They typically have the extension in
+     `.module.css`. CSS stylesheet are imported as:
+        Syntax:
+            >>> import './someStylesheet.css';
+        while, CSS modules are imported as:
+        Syntax:
+            >>> import nameOfYourStyles from './someStylesheet.module.css';
+        And while CSS stylesheet are applied as `className="myClass"`, CSS Modules are applied as
+        `className={nameOfYourStyles.myClass}`.
+        Tip: One benefit of CSS modules approach is that: it is locally scoped, i.e. the styles are imported in a file
+        with some name and only applies to that file, unlike CSS stylesheet which can be imported in one file (or
+        component) and is applied to another file (or child component). Thus, it helps to avoid CSS conflicts.
+    - CSS in JS Libraries (Styled Components)
