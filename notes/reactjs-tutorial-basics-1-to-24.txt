@@ -141,3 +141,15 @@ REACTJS TUTORIAL (BASICS) #1 to #24
     -> camelCase property naming convention:
         - onclick -> onClick
         - tabindex -> tabIndex
+
+# 9 - Props.
+    Props - short for properties - is the optional input a component can accept. It helps a component reusable and more
+    importantly dynamic. They are used to pass down data from one component to the component making use of that data.
+    To specify a property value, it is set as an attribute (as in <Hello name="John" />) and then retrieved via the
+    optional parameter - props (as in props.name). One reserved property is the children property accessed as
+    `props.children` which holds the item passed in between the XML tags of the component. If the XML tag for the
+    component is self-closing i.e. nothing is passed, `props.children` return null and nothing is rendered.
+    For class component, props are accessed via `this.props`.
+    One important rule of props are that: Props are IMMUTABLE i.e. their values cannot be changed (or they are readonly).
+    Assigning a value to name (as in props.name) results in an error.
+
