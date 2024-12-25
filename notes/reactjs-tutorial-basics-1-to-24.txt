@@ -124,3 +124,20 @@ REACTJS TUTORIAL (BASICS) #1 to #24
     components.
     We'll learn about hooks in an upcoming video.
 
+# 8 - JSX.
+    JSX - JavaScript XML - is an extension to the JavaScript syntax that allows you to write XML-like code for elements
+    adn components. JSX tags like HTML and XML tags have a tag name, attributes, and children. Although it is not
+    required to write React application, it makes your code simpler and elegant.
+    React provides a createElement() method which allows us to create element. It takes minimum of three arguments:
+    - the name of the element - div, input, etc.
+    - the properties of the element - an object containing the attributes of the elements
+    - and the children of the elements.
+    With the help of JSX, we can avoid writing the React.createElement() method all over for each element we want. We
+    just have the specify the XML layout of the component; and it is handled automatically for you.
+    So, we can say that JSX is a syntactic sugar for React.createElement().
+    ## Common differences in JSX from regular HTML are:
+    - class -> className
+    - for -> htmlFor
+    -> camelCase property naming convention:
+        - onclick -> onClick
+        - tabindex -> tabIndex
