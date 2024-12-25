@@ -93,3 +93,26 @@ REACTJS TUTORIAL (BASICS) #1 to #24
                 `export const MyComponentName = () => ...`
             when defining the function which exports that particular component by its name. It must, therefore,
             be imported using the exact name.
+
+# 6 - Class Components
+    A class component is basically a JS class with a constructor that can accept an optional input - the properties of
+    the components (known as 'props') and has a `render` method which returns an HTML (or JSX) element. Class components
+    can by itself maintain an internal state which can by itself be used to update the component.
+    To create a class component:
+        - Creat a JS file with the appropriate name in PascalCase. The name of the file must be the same as the name of
+        the component.
+        - Write a typical JS class with a render() method and return plain HTML of your choice.
+        - Next, export the class component
+        - And, then import in the file where you wish to use it.
+    ## Functional Component vs. Class Components:
+    Functional Component
+        - Functional component are simple functions. Use them as much as possible over class component
+        - Absence of the `this` keyword makes them easier to work with.
+        - Encourages one to solve a problem without state.
+        - Mainly responsible for the UI, hence called stateless, dumb or presentational components.
+    Class Component
+        - Class component are simple classes. They are more feature rich and maintain their private data - state.
+        - Involves complex UI logic; including the use of the `this` keyword
+        - Provides lifecycle hooks to perform certain action during the lifecycle of the component
+        - Being able to maintain states, they are usually referred to as stateful, smart or container component.
+
