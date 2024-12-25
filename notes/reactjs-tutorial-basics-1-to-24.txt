@@ -164,3 +164,17 @@ REACTJS TUTORIAL (BASICS) #1 to #24
     The concept of state is essential in any React application and are useful in handling events, and performing
     certain client-side action.
 
+# 11 - setState.
+    `this.setState()` is a method which allow us to modify the state variable of a component.
+    Here a few things to know about the `this.setState()` method:
+        - Although one can modify the state directly via `this.state`, it is not advisable as the state is changed but
+        the component UI is not updated.
+        `this.setState()` changes the state and tells React to re-render the component to update it.
+        - Also, calls to `this.setState()` are ASYNCHRONOUS in nature. Codes after it may therefore run even before the
+        state is modified. We might want to run some code immediately after the state is modified and this can be done
+        by passing the chunk of code as a callback function to the second parameter of the `this.setState` method.
+        - Additionally, React may group multiple `this.setState()` calls into one for performance and optimisation. The
+        downside of this is that if new state depends on the previous state, the change will not be reflected in the
+        next call. Therefore, whenever the new state depends on the old state, you are advised to pass a callback
+        instead of the new state object. The callback should then return the new state. The previous state can be
+        referenced as the first parameter of the callback and the second parameter of the callback is the `props`.
