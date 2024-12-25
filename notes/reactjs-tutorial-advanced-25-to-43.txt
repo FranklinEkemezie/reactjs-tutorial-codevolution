@@ -41,3 +41,12 @@ REACTJS TUTORIAL (ADVANCED) #25 to #43
     re-rendering when necessary since if the parent component does not re-render, the child component will not re-render
     even if it needs to. Ideally, the child components should be pure if the parent component is also pure. This helps
     to avoid unexpected behaviour.
+
+# 27 - memo
+    React.memo() (shorted as "memo") allows us to achieve the equivalent functionality of pure component for functional
+    component. It prevents a functional component from re-rendering if the `props` has not changed since the last time.
+    This is done by export the return value of React.memo(SomeComponent) instead of just the `SomeComponent`.
+    Syntax:
+        >>> export default React.memo(SomeComponent);
+    Tip: React.memo, here, is a "higher order component" or HOC - components which accept other components are arguments
+    and add a functionality to them.
