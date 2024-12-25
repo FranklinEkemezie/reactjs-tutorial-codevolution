@@ -187,3 +187,9 @@ REACTJS TUTORIAL (BASICS) #1 to #24
     >>> const [count, step] = getNext();    // assuming getNext() returns [4, 3, true];
     Destructuring improves code readability and hence, commonly used in React application especially in destructing
     properties of a `props` or `state` variables.
+
+# 13 - Event Handling
+    When a user interacts with your application, certain events are fired. Common browser event include: mouse click,
+    mouse hover, key press (up or down), input change, focus, load, etc. We may wish to run some codes when a particular
+    event is fired (i.e. handle the event), we can do so using the event name (in camelCase) as attribute name and the
+    event handler (a callback function) as the attribute value.
