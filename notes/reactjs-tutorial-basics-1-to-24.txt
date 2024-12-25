@@ -229,3 +229,42 @@ REACTJS TUTORIAL (BASICS) #1 to #24
     back to the parent. When the child receives the method via props, it supplies the argument needed for the method's
     parameter which is then sent back to the parent when called. This allows data to be passed from the child upwards
     to the parent component.
+
+# 16 - Conditional Rendering.
+    Conditional rendering is simply rendering JSX when a certain condition is passed. There are four common ways of
+    rendering JSX conditionally and these are purely JavaScript syntax (and not React):
+    - if/else:
+        >>> if (condition) {
+            return (
+                // JSX goes here
+            )
+        } else {
+            return (
+                // Another JSX goes here
+            )
+        }
+    - element variables:
+        >>> let element;
+        if (condition) {
+            element = (
+                // Some JSX...
+            )
+        } else {
+            element = (
+                // Some other JSX...
+            )
+        }
+
+        return element;
+    - ternary conditional operator:
+        >>> return condition ? (
+            // Some JSX...
+        ) : (
+            // Some other JSX...
+        )
+    - short circuit: render JSX or show nothing
+        >>> return condition && (
+            // JSX goes here...
+        )
+    Tip: In any of the four cases, the parentheses can be omitted if the JSX is one line.
+    Also, the third and the fourth are the most commonly used ones as they are concise and more readable.
