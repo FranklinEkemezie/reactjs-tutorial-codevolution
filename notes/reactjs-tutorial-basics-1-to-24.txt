@@ -369,3 +369,37 @@ REACTJS TUTORIAL (BASICS) #1 to #24
     - componentDidMount() - invoked immediately after a component and all its children components have been rendered
     to the DOM.
         Dos:    cause side effect, interact with the DOM, perform network (e.g. HTTP) requests.
+
+# 24 - Component Updating Lifecycle Methods
+    These methods are called when a component is re-rendered because of changes in the `state` or `props`.
+    In the order that they are invoked, they are as follows:
+    - static getDerivedStateFromProps(props, state) - same as in Mounting lifecycle phase.
+    - shouldComponentUpdate(nextProps, nextState) - determines if the component should re-render or not by returning
+    `true` to re-render the component or `false` to prevent it from re-rendering.
+        Don'ts: cause side effects, set the state (using the setState() method).
+        Tip: Used for performance optimisation in scenarios where the components need not re-render each time there is
+        a change in `state` or `props`.
+    - render() - same in Mounting lifecycle phase.
+    - getSnapshotBeforeUpdate(prevProps, prevState) - called right before the changes from the virtual DOM are to be
+    reflected in the DOM. It is usually used to capture some information from the DOM before it changes. It should
+    return `null` or a value; the value which is passed as a third parameter to the next method.
+    - componentDidUpdate(prevProps, prevState, snapshot) - at this point, the UI is completely rendered and the
+    re-render cycles is completed. The `snapshot` method holds information about the snapshot of the DOM is a value
+    returned from the `getSnapshotBeforeUpdate()` just before it (the DOM) is updated.
+        Dos:    cause side effects - e.g. make AJAX calls.
+        Tip: It is a good practice to compare the previous props and state and the current one to ensure that there is
+        need for initiating side effects.
+
+    ## Unmounting Phase
+    This phase is when the component is about to be removed from the DOM. The only method in the unmounting phase is:
+    - componentWillUnMount() - Invoked immediately before a component is unmounted and destroyed.
+        Dos:    cancelling any network requests, removing event handlers, cancelling any subscriptions, invalidating
+        timers and various other cleanup tasks.
+        Don'ts: call the `setState` - since component is never rendered when removed.
+
+    ## Error Handling Phase
+    This phase is when there is an error either during rendering, in a lifecycle method, or in the constructor of any
+    child component. The two methods available are:
+        - `static getDerivedStateFromError(error)`; and
+        - `componentDidCatch(error, info)`
+    We'll discuss the two methods later in series when we talk about the concept of "Error Boundary" in React.
