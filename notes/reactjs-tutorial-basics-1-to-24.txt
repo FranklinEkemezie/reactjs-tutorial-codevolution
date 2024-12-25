@@ -290,3 +290,16 @@ REACTJS TUTORIAL (BASICS) #1 to #24
     - It is not also advisable to use the index of an array item as the unique "key" props since it is not stable and
     may result in unpredictable results during rendering.
 
+# 19 - Index as Key - Anti-pattern.
+    Using index as key results in undesired behaviour hence it is considered 'anti-pattern'. This is because indexes are
+    not "stable" - in the sense that when a new item is added, the index re-arranges starting from 0 to the last index:
+    `array.length -1`. Therefore, each item ends up not having a unique "key" when next they are about to be re-rendered.
+    You can however use index as key, when:
+    - the items in your list do not have a unique id - if they do, you should make use of it.
+    - the list is static and do not change - no addition or removal.
+    - the list will never be re-ordered or filtered.
+    Another workaround is to:
+    - use one of the npm packages to generate a unique IDs for the items of the list; or
+    - hash each list item or one or more of its properties to generate a unique key.
+    Using index as key should always be your last resort, as even React uses that when you don't specify it, although it
+    gives a warning.
