@@ -41,3 +41,28 @@ REACTJS TUTORIAL (BASICS) #1 to #24
     Another similar method to create a React app is by installing the create-react-app globally and then running it:
         >>> npm install create-react-app -g
             create-react-app <project_name>
+
+# 3 - Folder Structure
+    # The following files and folder can be found in a typical React application:
+    - node_modules/ - contains the packages used by React
+    - public/ - contains files or assets meant to be displayed to the public. Common files in it include:
+        - index.html - The only HTML file in a React app. It has a <div> element with id="root" which allows React
+        to dynamically change the view
+        - manifest.json - contains info about the React app usually used in PWAs
+        - Others are: robots.txt, favicon.ico, etc.
+    - src/ - contains the source code for the React components. Files found in it include:
+        - index.js - this is included in the index.html and is the starting point of the React app. It selects the
+        "root" element and injects the UI HTML into it.
+        - App.js - this file contains the root app component: the App component. All other components are found in it.
+        - App.css - stylesheets for App.js component.
+        - index.css - stylesheets for index.js component.
+    - .gitignore - tells Git which files/folders to not track. This is important to prevent pushing the node_modules.
+    - package.json - contains all the package list required and scripts required to run the React application.
+    - package-lock.json - contains information about the packages used as well the specific version to "lock in" the
+    application with that version
+    - README.md - a README file with some information on how to get started with the React app
+    # How the React runs:
+        - The index.js includes in the index.html grabs (or selects) the DOM "root" HTML element.
+        - The index.js, then renders the App component in the App.css
+        - The App component in turn renders other components.
+        That is: Your components -> App component -> index.js -> index.html
