@@ -1,1 +1,26 @@
 REACTJS TUTORIAL (BASICS) #1 to #24
+
+# 1 - Introduction
+    React is an open source JS library for building on user interfaces.
+    ## Why Learn React?
+        - Created, used and maintained by Facebook. Thus, it is going to stay for a long time.
+        - It has a huge community
+        - In demand
+    ## Features or Characteristics
+        - React has a component based architecture - allows you to break down your website into small components which
+        compose the entire page.
+        - It allows developers to write reusable code.
+        - React is also declarative - say what you want and React builds the actual UI in its own way (the opposite
+        paradigm is imperative).
+        - With a good knowledge of React, you can explore the field of mobile application (React Native)
+    ## Prerequisites
+        - HTML, CSS; and
+        - JavaScript fundamentals - this, filter, map, reduce.
+        - ES6 - let & const, arrow functions, template literals, default parameters, object literals,
+        rest and spread operators, and destructuring assignment.
+    ## Course Content
+        - Fundamentals
+        - HTTP
+        - Routing
+        - Redux
+        - Utilities
