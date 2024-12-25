@@ -153,3 +153,14 @@ REACTJS TUTORIAL (BASICS) #1 to #24
     One important rule of props are that: Props are IMMUTABLE i.e. their values cannot be changed (or they are readonly).
     Assigning a value to name (as in props.name) results in an error.
 
+# 10 - State.
+    State is another way to decide what is rendered on the screen aside from props. Compared to props, state:
+        - is managed within the component; while props is passed to the component.
+        Take state as a function's local variable and props as function parameter.
+        - can be changed; while props are immutable.
+        - accessed via `useState` hook (in Functional components) or `this.state` (in class component); while props
+        can be accessed via `props` (in Functional components) or `this.props` (class components).
+    To change a state in class component, the `setState()` method is used. It accepts the new state object as argument.
+    The concept of state is essential in any React application and are useful in handling events, and performing
+    certain client-side action.
+
