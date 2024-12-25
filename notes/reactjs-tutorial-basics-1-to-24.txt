@@ -322,3 +322,10 @@ REACTJS TUTORIAL (BASICS) #1 to #24
         with some name and only applies to that file, unlike CSS stylesheet which can be imported in one file (or
         component) and is applied to another file (or child component). Thus, it helps to avoid CSS conflicts.
     - CSS in JS Libraries (Styled Components)
+
+# 21 - Basics of Form Handling
+    Form elements are handled easily when they are "controlled components". A form element is said to be a "controlled
+    component" when its value (as well as updates and rendering) is controlled by React, rather the form element itself.
+    Therefore, a controlled React form component should have the following:
+    - a state variable - to store the current value of the input.
+    - an event handler - (usually `onChange` attribute and event callback method) - to handle change in the input value.
