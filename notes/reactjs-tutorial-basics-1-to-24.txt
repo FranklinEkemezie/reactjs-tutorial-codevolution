@@ -116,3 +116,11 @@ REACTJS TUTORIAL (BASICS) #1 to #24
         - Provides lifecycle hooks to perform certain action during the lifecycle of the component
         - Being able to maintain states, they are usually referred to as stateful, smart or container component.
 
+# 7 - Hooks Update
+    As part of the release of React 16.7.0-alpha, hooks were introduced - a cool new feature that lets you use state
+    and other React features without writing a class. Since we can use and manage state in functional components, we
+    can no longer consider them as being totally stateless.
+    Hooks are an important feature and encourages React developers to use functional components more over class
+    components.
+    We'll learn about hooks in an upcoming video.
+
