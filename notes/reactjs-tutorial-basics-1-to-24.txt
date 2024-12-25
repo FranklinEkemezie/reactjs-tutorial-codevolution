@@ -206,7 +206,7 @@ REACTJS TUTORIAL (BASICS) #1 to #24
     - Passing an arrow function as the event handler which then calls the actual event handler
     Example:
         >>> <button onClick={() => this.clickHandler()}>Click Me</button>
-    - Binding the event handler in the `constructor()` (not in the `render()` method).
+    - Binding the event handler in the `constructor()` (not in the `render()` method.
     Example:
         >>> constructor(props) {
             super(props);
@@ -223,3 +223,9 @@ REACTJS TUTORIAL (BASICS) #1 to #24
      It is also the official way to bind event handlers used in the React documentation.
      - Another method is to use arrow function instead when declaring the event handler, and you won't have to worry
      about binding the event handler to the class component.
+
+# 15 - Methods as `props`
+    We can pass methods from a parent component to a child component as props so that we can pass data from the child
+    back to the parent. When the child receives the method via props, it supplies the argument needed for the method's
+    parameter which is then sent back to the parent when called. This allows data to be passed from the child upwards
+    to the parent component.
