@@ -1,2 +1,23 @@
 REACTJS TUTORIAL (ADVANCED) #25 to #43
 
+# 25 - Fragments.
+    Fragments allows you to group a list of children to the DOM without wrapping them with a parent node or component.
+    With fragments, we can wrap a group of children components or JSX, so that they are rendered without a parent.
+    Syntax:
+        >>> <React.Fragment>
+                <h1>Hello, world!</h1>
+                <SomeComponent />
+                <div>We are all rendered without a parent</div>
+            </React.Fragment>
+    Fragments also accept a unique "key" prop which is useful when rendering list items, but you do not want to wrap
+    the content of the UI JSX.
+    Example:
+        >>> const items = [...];   // some list of items
+            const itemList = items.map(item => (
+                <React.Fragment key={item.id}>
+                    <h1>{item.title}</h1>
+                    <p>{item.content}</p>
+                </React.Fragment>
+            ));
+    A shorter syntax to <React.Fragment> is an empty tag: <> showing that the child components or JSX are not wrapped
+    by a parent component or JSX. This shorter syntax, however, does not accept the unique "key" props.
