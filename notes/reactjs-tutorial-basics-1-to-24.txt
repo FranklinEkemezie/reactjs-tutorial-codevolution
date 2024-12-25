@@ -74,3 +74,22 @@ REACTJS TUTORIAL (BASICS) #1 to #24
     - stateless functional component - they are the usual JS functions returning HTML (or JSX as we shall soon see).
     - stateful class component - they are the usual JS classes extending the Component class (imported from 'react')
      with a render() method.
+
+# 5 - Functional Components
+    A functional component is basically a JavaScript function which accepts an optional input - the properties of the
+    components (known as 'props') and returns an HTML element (or JSX).
+    To create a functional component:
+        - Create a JS file with the appropriate name in PascalCase. The name of the file must be the same as the name
+        of the component.
+        - Write a typical JS function and return plain HTML of your choice. You don't need to put the HTML in strings.
+        It must be plain HTML (which in this case is known as JSX). You can use arrow function to shorten it if the
+        function body is not long. You also need to import React from 'react' to write JSX.
+        - Next, export your component. You can use default export or named export:
+            - Default export - using `export default MyComponentName` which exports that component by default. Thus,
+            whenever, the file is imported, the component is the one imported by default. Therefore, you can import it
+            with another name since it is the default component that the file will give you.
+            - Named export - using:
+                `export function MyComponentName () { ... }` or
+                `export const MyComponentName = () => ...`
+            when defining the function which exports that particular component by its name. It must, therefore,
+            be imported using the exact name.
