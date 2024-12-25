@@ -268,3 +268,14 @@ REACTJS TUTORIAL (BASICS) #1 to #24
         )
     Tip: In any of the four cases, the parentheses can be omitted if the JSX is one line.
     Also, the third and the fourth are the most commonly used ones as they are concise and more readable.
+
+# 17 - List Rendering.
+    Rendering a list of items is a very common scenarios in building applications. JS array methods, especially the
+    Array.map() are very useful in list rendering.
+    It is a common convention for a component rendering the list to be in charge of that single job - which is,
+    rendering the list. The items of the list being rendered may be passed down to another component which is
+    responsible for rendering the individual UI of the list item.
+    More importantly, each list item being rendered in a list is expected to have a unique "key" prop. This helps in
+    optimization and efficient rendering as we will see in the next lesson. This is the reason why rendering a
+    list - something which may seem trivial - is somehow a big deal in React applications.
+
