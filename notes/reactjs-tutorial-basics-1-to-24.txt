@@ -329,3 +329,24 @@ REACTJS TUTORIAL (BASICS) #1 to #24
     Therefore, a controlled React form component should have the following:
     - a state variable - to store the current value of the input.
     - an event handler - (usually `onChange` attribute and event callback method) - to handle change in the input value.
+
+# 22 - Lifecycle Methods
+    When we create a component, it goes through different stages known as the components lifecycle. React provides some
+    built-in methods for class components which allows us to "hook" into any of those stages and perform certain actions
+    at a particular stage. These methods are known as lifecycle methods and available for class components only.
+    However, the introduction of React hooks (which we will learn later in the series) allows us to perform similar
+    actions i.e. to hook into the certain stages in the lifecycle of functional components. Thus, while most React
+    applications are shifting away from class components, it is important to understand the concepts of lifecycle
+    methods in order to grasp and appreciate the concepts of React hooks.
+    The React lifecycle methods have changed over time, and they can be broadly grouped into four stages/phases:
+    - mounting, updating, unmounting, and error handling lifecycle methods.
+    ## Mounting: when an instance of a component is being created and inserted into the DOM:
+        Examples: constructor, static getDerivedStateFromProps, render and componentDidMount
+    ## Updating: when a component is being re-rendered as a result of changes to either its props or state.
+        Examples: static getDerivedStateFromProps, shouldComponentUpdate, render, getSnapShotBeforeUpdate and
+        componentDidUpdate.
+    ## Unmounting: when a component is being removed from the DOM
+        Examples: componentWillUnMount
+    ## Error Handling: when there is an error during rendering, in a lifecycle method, or in the constructor of any
+    child component.
+        Examples: static getDerivedStateFromError and componentDidCatch.
