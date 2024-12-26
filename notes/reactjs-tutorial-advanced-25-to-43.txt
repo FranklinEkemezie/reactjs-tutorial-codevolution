@@ -143,3 +143,43 @@ REACTJS TUTORIAL (ADVANCED) #25 to #43
     In this situation, HOCs can be used to include the functionality to any component which is passed down to it as
     argument, returning a new "enhanced" form of that component (with the "counter logic" functionality).
 
+# 34 - Higher Order Components (Part 2)
+    Definition: Higher Order Component (shortened as "HOC") is a pattern where a function takes a component as an
+    argument and returns a new component.
+    Syntax:
+        >>> const EnhancedComponent = HigherOrderComponent(OriginalComponent);
+    Typically, they add a particular functionality or logic to a component, thus, "enhancing" their functionality.
+    Below, is a typical HOC:
+        >>> const withFunctionality = (WrappedComponent) => {
+            class WithFunctionality extends React.Component {
+                constructor(props) {
+                    super(props);
+
+                    this.state = {
+                        someStateVariable: null
+                    }
+                }
+
+                someSharedFunctionality = () => {
+                    // modify `someStateVariable` here
+                    // do other things
+                    // ...
+                }
+
+                render() {
+                    return <WrappedComponent
+                        stateVar={this.someStateVariable}
+                        someFunctionality={this.someSharedFunctionality}
+                    />
+                }
+            }
+
+            return WithFunctionality;
+        }
+    Usage:
+        >>> export default withFunctionality(someComponent);
+            export default withFunctionality(someOtherComponent);
+
+    Here `withFunctionality` is the HOC which adds `someSharedFunctionality` to the wrapped components which are
+    being exported.
+
