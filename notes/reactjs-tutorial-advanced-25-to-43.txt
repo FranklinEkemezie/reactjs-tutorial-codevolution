@@ -272,7 +272,13 @@ REACTJS TUTORIAL (ADVANCED) #25 to #43
             clearly depicting which context to be created (in camelCase as in - themeContext.js or userContext.js etc.)
             To make it available outside the file, they are exported and since we just need those two properties, they
             are usually extracted and then exported. (See hello-world/src/components/userContext.js)
-            >>> export { ThemeProvider, ThemeConsumer };
+            >>> // in the themeContext.js file
+                const ThemeContext = React.createContext();
+
+                const ThemeProvider = ThemeContext.Provider;
+                const ThemeConsumer = ThemeContext.Consumer;
+
+                export { ThemeProvider, ThemeConsumer };
         - provide a context value:
             At the top level, the Provider is imported and is used to provide a value for the context. This is done at
             the top level e.g. in the App component and the value is accessible to all components nested within it. To
@@ -291,3 +297,34 @@ REACTJS TUTORIAL (ADVANCED) #25 to #43
             </ThemeConsumer>
     In the next lesson, we'll conclude the Context API by learning a few more details and scenarios to note when making
     use of the Context API in React applications.
+
+# 40 - Context (Part 3)
+    Two more details to know about the Context API are:
+        - You can set a default value to your context. To do this, you pass an argument to the React.createContext()
+        method when creating a context
+        >>> const ThemeContext = React.createContext('light');
+        This allows you to consume the context without needing to provide a value (if you don't need to). When a value
+        is provided, the value overrides the default value and is used instead. When no default value or custom value
+        (via Provider), the value is `undefined`.
+        - Also, there is an alternative way to consume a context value without using the Consumer object. This is done
+        by setting the `ContextType` static property of the component consuming it to the Context object created.
+        In this way, the component is tied to that Context object and the context value can now be accessed directly
+        using `this.context`
+        >>> // Setting the context type
+            // Inside the `SomeDeeplyNestedComponent` class:
+            static ContextType = ThemeContext;
+            // OR, outside the class:
+            SomeDeeplyNestedComponent.ContextType = ThemeContext;
+
+        >>> // In the component's render method:
+            <div>This user prefers {this.context} theme</div>
+
+        While this makes the syntax to consume the context value a bit cleaner, easier and straightforward, it has two
+        limitations:
+            - this can only be implemented in class components; and
+            - since the component is tied to that particular Context via the static ContextType property, you can only
+            subscribe to a single ContextType. In other words, you can only consume one context via `this.context` and
+            in most scenarios, your application may need more than just one context, which can be achieved using the
+            previous syntax. However, you can combine both syntaxes i.e. you can tie your component to a ContextType so
+            that you can get the context value using `this.context` and as well make use of the other (previous) syntax
+            to access the same or a different context value.
