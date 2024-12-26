@@ -177,9 +177,34 @@ REACTJS TUTORIAL (ADVANCED) #25 to #43
             return WithFunctionality;
         }
     Usage:
-        >>> export default withFunctionality(someComponent);
-            export default withFunctionality(someOtherComponent);
+        >>> export default withFunctionality(SomeComponent);
+            export default withFunctionality(SomeOtherComponent);
 
     Here `withFunctionality` is the HOC which adds `someSharedFunctionality` to the wrapped components which are
     being exported.
+
+# 35 - Higher Order Components (Part 3)
+    Two more points to note about Higher Order Components (HOCs) are:
+        - when props are passed down to a component wrapped by an HOC, the props is being passed to the HOC and not to
+        the component itself. Consider the example:
+            >>> <SomeComponent greeting="Bonjour" />
+        Here, the `greeting` props is not cannot be accessed via `this.props.greeting` in the `SomeComponent`
+        component (say in SomeComponent.js file), rather it is accessible in the HOC (say withFunctionality.js file).
+        To access props passed to a "enhanced" component in the actual/original component, you have to pass down the
+        `prop` from the HOC down to the component. It is common to pass down all props once and for all in the HOC
+        to the component using the spread operator (...) - as in {...this.props}.
+        Example: In the HOC's render() method:
+            >>> return (
+                <WrappedComponent
+                    stateVar={this.someStateVariable}
+                    someFunctionality={this.someSharedFunctionality}
+                    {...this.props}
+                />
+        - lastly, you can also pass down extra arguments (or parameters) when passing the component to be enhanced.
+        Example:
+            >>> export default withFunctionality(SomeComponent, 3);
+        Here, the HOC `withFunctionality` accepts an extra parameter. The HOC definition may be as follows:
+            >>> const withFunctionality = (WrappedComponent, someParameter) => {
+                // ...
+            }
 
