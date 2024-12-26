@@ -101,3 +101,23 @@ REACTJS TUTORIAL (ADVANCED) #25 to #43
     Example:
         >>> <SomeComponent ref={this.btnRef} />
     That is, although the "ref" is attached to the `SomeComponent`, it is being forwarded to the <button> element.
+
+# 31 - Portals
+    React Portals provides a way to render children elements into a node that exists outside the DOM hierarchy.
+    Usually, JSX are rendered as they are - children components are rendered as children elements, in such a way that
+    any child component must be equally be rendered as HTML child elements in the DOM. With portals, we can render a
+    child component as a child element of a different node. This is done when returning the JSX to be rendered using the
+    ReactDOM.createPortal() method from ReactDOM imported from "react". It takes at least two arguments: the JSX to be
+    rendered, and the node to render the JSX.
+    Example:
+        >>> return ReactDOM.createPortal(<h1>Hello, world1</h1>, document.getElementById("portal-root"));
+    Portals are useful in scenarios where the parent component (HTML element or node) affects the rendering of the child
+    (usually in styling e.g. in modals which may need to cover the full screen while their parents have limited
+    width/height).
+    Additionally, although portals exists outside their parent component hierarchy, the event propagation bubbles up to
+    the parent component as if they are DOM children to their parents. That is, even if an element is rendered in a
+    different DOM node (via portals), when it fires an event (e.g. when clicked), this event is propagated to the parent
+    component going up to the ancestors in the DOM tree (rather than the actual DOM node where it is rendered in). Thus,
+    a "click" event, for example, can be handled by the parent component, even though it is not rendered under it in
+    the DOM tree. This makes them seem as if they are part of the same DOM tree.
+
