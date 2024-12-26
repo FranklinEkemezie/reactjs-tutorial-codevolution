@@ -85,3 +85,19 @@ REACTJS TUTORIAL (ADVANCED) #25 to #43
         >>> <CustomInput type="text" ref={this.myInputRef} />
     Having access to a reference of <CustomInput/> allows us to call its methods, or perform other actions.
     NB: Creating refs in this way can only be done in class components.
+
+# 30 - Forwarding Refs.
+    Ref forwarding is a technique used to pass down "refs" automatically to a component to one of its children.
+    Example:
+        >>> const SomeComponent = React.forwardRef((props, ref) => (
+            <div>
+                <h1>{pros.title}</h1>
+                <p>{props.text}</p>
+                <button ref={ref}></button>
+            </di>
+        ));
+    In this example, any reference to the `SomeComponent` component in a parent component is forwarded straight
+    to the <button> HTML DOM element. The parent component may have some "ref" to it as:
+    Example:
+        >>> <SomeComponent ref={this.btnRef} />
+    That is, although the "ref" is attached to the `SomeComponent`, it is being forwarded to the <button> element.
