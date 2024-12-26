@@ -263,4 +263,31 @@ REACTJS TUTORIAL (ADVANCED) #25 to #43
     passed down directly to the component which needs it.
     In the next lesson, we'll see how to do just that using the Context API.
 
-
+# 39 - Context (Part 2)
+    A context can be created in just three simple steps:
+        - create the context:
+            This is done using the React.createContext() method. This method returns a Context object; two of its
+            properties are important to us - the `Provider` and `Consumer` properties which are instances of the
+            Provider and Consumer classes respectively. This is usually done in a separate .js file saved with name
+            clearly depicting which context to be created (in camelCase as in - themeContext.js or userContext.js etc.)
+            To make it available outside the file, they are exported and since we just need those two properties, they
+            are usually extracted and then exported. (See hello-world/src/components/userContext.js)
+            >>> export { ThemeProvider, ThemeConsumer };
+        - provide a context value:
+            At the top level, the Provider is imported and is used to provide a value for the context. This is done at
+            the top level e.g. in the App component and the value is accessible to all components nested within it. To
+            do this, the component nesting the deeper component which we want to have access to the value is wrapped
+            with Provider JSX and a "value" prop is specified whose value is the value to be passed.
+            >>> <ThemeProvider value={someValue}>
+                    <SomeAncestorComponent />
+                </ThemeProvider>
+            The value `someValue` can now be consumed in any of the descendant component.
+        - consume the context value:
+            In the component where the context value is needed, the Consumer wraps a function call - the function which
+            accepts the value as argument and should return the JSX which of course, makes use of the value.
+            >>> // In the render method of `SomeDeeplyNestedComponent` component
+            <ThemeConsumer>
+                {userPreferredTheme => <div>This user prefers {userPreferredTheme} theme </div>}
+            </ThemeConsumer>
+    In the next lesson, we'll conclude the Context API by learning a few more details and scenarios to note when making
+    use of the Context API in React applications.
