@@ -208,3 +208,7 @@ REACTJS TUTORIAL (ADVANCED) #25 to #43
                 // ...
             }
 
+# 36 - Render Props (Part 1)
+    Render Props is another technique to share common functionality among different components.
+    We shall see how to make use of the concept of "Render Props" to share common functionality in the next lesson.
+
