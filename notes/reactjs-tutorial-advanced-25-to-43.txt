@@ -256,4 +256,11 @@ REACTJS TUTORIAL (ADVANCED) #25 to #43
     However, since a different instance is used for each individual component, the state is not conflicted, although
     they share the same functionality.
 
+# 38 - Context (Part 1)
+    Context provides a way to pass data through the component tree without having to pass props down manually at every
+    level. It is used when a certain information (or props) is needed by a component (or different components) which
+    is/are nested deeply (in different levels for more components) in the component tree, allowing the information to be
+    passed down directly to the component which needs it.
+    In the next lesson, we'll see how to do just that using the Context API.
+
 
