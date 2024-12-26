@@ -77,3 +77,11 @@ REACTJS TUTORIAL (ADVANCED) #25 to #43
                 // perform some actions
                 const inputEl = this.refEl;
             }
+
+# 29 - Refs with Class Components
+    Apart from native HTML DOM elements, you can also attach "refs" to custom React component in the same manner as you
+    attach "refs" to the native HTML element using the reserved "ref" prop.
+    Syntax:
+        >>> <CustomInput type="text" ref={this.myInputRef} />
+    Having access to a reference of <CustomInput/> allows us to call its methods, or perform other actions.
+    NB: Creating refs in this way can only be done in class components.
