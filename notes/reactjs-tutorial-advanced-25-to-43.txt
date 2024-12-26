@@ -121,3 +121,10 @@ REACTJS TUTORIAL (ADVANCED) #25 to #43
     a "click" event, for example, can be handled by the parent component, even though it is not rendered under it in
     the DOM tree. This makes them seem as if they are part of the same DOM tree.
 
+# 32 - Error Boundary
+    An Error Boundary is a class component that implements either one or both of the error handling lifecycle methods:
+    `static getDerivedStateFromError` or `componentDidCatch`.
+    The static method `getDerivedStateFromError` method is used to render a fallback UI after an error is thrown and the
+    `componentDidCatch` method is used to log the error information.
+    The function of Error boundaries is to catch JavaScript error in the child component tree, log those errors and
+    display a fall-back UI. This is done by wrapping the component(s) with the Error boundary component.
