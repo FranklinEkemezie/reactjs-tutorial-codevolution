@@ -128,3 +128,18 @@ REACTJS TUTORIAL (ADVANCED) #25 to #43
     `componentDidCatch` method is used to log the error information.
     The function of Error boundaries is to catch JavaScript error in the child component tree, log those errors and
     display a fall-back UI. This is done by wrapping the component(s) with the Error boundary component.
+
+# 33 - Higher Order Components (Part 1)
+    Higher Order Components are components which accept other components as arguments. They allow developers to share
+    common functionality amongst components. For illustration, consider a situation where we wish to build three or more
+    counter components which increment the internal state "count" variable when a particular event is fired (e.g. when
+    clicked for one, hovered for the other, when selected or when a key is pressed in an input). Since we do not want to
+    duplicate the common functionality which is "incrementing the count variables" we can devise other means to share
+    this functionality. One option is to lift the "increment count" logic to a parent component, pass the function as a
+    prop, allowing each component to pass its instance (via the `this` keyword) so that its state (i.e. the "count"
+    variable) is updated. This solution, however ties the individual counter to the parent components and is not ideal
+    in situations in which we don't always want the individual counter component to be a direct child to the parent
+    counter component holding the logic.
+    In this situation, HOCs can be used to include the functionality to any component which is passed down to it as
+    argument, returning a new "enhanced" form of that component (with the "counter logic" functionality).
+
