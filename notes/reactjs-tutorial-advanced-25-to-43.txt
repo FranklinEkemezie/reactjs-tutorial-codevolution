@@ -358,5 +358,26 @@ REACTJS TUTORIAL (ADVANCED) #25 to #43
         an `error` variable initially set to `null` (to indicate no value) or `false`, which is set to `true` when an
         error occurs or `false` if no error has occurred. The `catch()` method is also used to catch errors. The UI is
         then rendered conditionally based on if an error has occurred or not.
-    (See ProductList.js and BookList.js in ./hello-world/src/components/ for demo)
+    (See ProductList.js and BookList.js in ../hello-world/src/components/ for demo)
 
+# 43 - HTTP POST Request
+    Making POST Request to HTTP REST API is much the same as that of GET Request. The `fetch()` API is used but now the
+    second parameter is used to provide extra information on the type of HTTP request. To do so, an object is provided,
+    common properties in the object are:
+        - method - indicate the request method (in this case, "post")
+        - headers - specify headers to send along with the request
+        - body - specify the request body. The value is usually a FormData object. The FormData object is instantiated
+        by the HTML Form DOM element as argument to the constructor (e.g. new FormData(formEl)). One way to access the
+        HTML Form DOM element `formEl` is using React ref by creating a reference to the form element.
+        (See ../hello-world/src/components/AddBookForm.js for a demo)
+    Sending POST request with the `axios` library is fairly simple. This is done using the axios.post() method passing
+    the endpoint URL as the first parameter and the data to "post" as an object.
+    Usually a response is sent back by the server and since both methods are Promise based you can attach the `then()`
+    and `catch()` method to handle the response and catch errors respectively. The response is used to determine what
+    message (whether successful or failed) to be displayed in the UI.
+    NB: You have to study the endpoints (usually through its documentation) to know the structure and what to expect as
+    response for any HTTP request.
+    Also, posting form data requires form validation and there are certain libraries that make form validation a lot
+    easier.
+    While there other form of HTTP request such as PUT, DELETE etc., they are pretty much the same and can be done just
+    in a way similar to the GET and POST request with just slight modifications.
