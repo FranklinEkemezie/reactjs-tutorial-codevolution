@@ -328,3 +328,13 @@ REACTJS TUTORIAL (ADVANCED) #25 to #43
             previous syntax. However, you can combine both syntaxes i.e. you can tie your component to a ContextType so
             that you can get the context value using `this.context` and as well make use of the other (previous) syntax
             to access the same or a different context value.
+
+# 41 - HTTP and React.
+    React is a UI library and therefore, has no defined functionality to make HTTP requests and AJAX calls. The most
+    important thing to note is that React does not need to know how you fetch data over network request. You just have
+    to get the data - which ever way you choose to do it - and send in the data as `props` so that component using its
+    internal `state` can render the UI.
+    Common ways to make HTTP Request in React app are:
+        - using the JavaScript `fetch()` API (or method)
+        - using external library - e.g. Axios.
+    In the next two lessons, we'll see how to make AJAX calls (for GET and POST HTTP Request) and render the data.
