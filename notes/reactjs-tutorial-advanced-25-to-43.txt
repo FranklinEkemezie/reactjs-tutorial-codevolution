@@ -338,3 +338,25 @@ REACTJS TUTORIAL (ADVANCED) #25 to #43
         - using the JavaScript `fetch()` API (or method)
         - using external library - e.g. Axios.
     In the next two lessons, we'll see how to make AJAX calls (for GET and POST HTTP Request) and render the data.
+
+# 42 - HTTP GET Request
+    From our knowledge of lifecycle methods, it is clear that the right time to make HTTP request is when the UI is
+    already rendered. React provides the `componentDidMount()` lifecycle method which is invoked immediately after the
+    component is rendered; this is the right place to make the request. Here we can perform the HTTP request using the
+    `fetch()` API or any external library - axios, being one of the most popular ones.
+        - fetch() - accepts the endpoint URL as the first parameter and optional second parameter - an object - which
+        holds information e.g. request method, headers, request body etc. For GET requests, however, the second
+        argument can be left out.
+        - To use axios, import axios from 'axios', the `get()` method is called on the `axios` object passing the
+        endpoint URL as an argument.
+        Both fetch() and axios.get() are Promise based methods and thus allows us to use `then()` and `catch()` to
+        handle the response.
+        When the response is received, it is then used to populate the state variable, which causes a re-rendering, thus
+        rendering the component with the data fetched.
+        It is also good practice to handle error when something goes wrong fetching data or when making HTTP request
+        in general, and to display a fallback UI or error message to notify the user. A common way to do this is using
+        an `error` variable initially set to `null` (to indicate no value) or `false`, which is set to `true` when an
+        error occurs or `false` if no error has occurred. The `catch()` method is also used to catch errors. The UI is
+        then rendered conditionally based on if an error has occurred or not.
+    (See ProductList.js and BookList.js in ./hello-world/src/components/ for demo)
+
