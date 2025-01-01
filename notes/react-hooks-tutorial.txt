@@ -94,3 +94,14 @@ REACT HOOKS TUTORIAL
     Since the `useEffect` is used directly in the component, you can access the props or state directly without writing
     additional code. In the coming lessons, we'll explore how we can customise the useEffect hook to only execute our
     effect when we need it to do so instead of after every render.
+
+# 8 - Conditionally run effects
+    We can run effects conditionally usually when a props or state has changed so far. To do this, useEffect provides a
+    second parameter - a dependency array - the array should contain a list of props, or state variable which the
+    useEffect hook should watch out for, and run the effects only when any of these items in the dependency array has
+    changed.
+        >>> Syntax:
+            useEffect(() => {
+                // code to run only when any of the dependencies changes...
+            }, [dep1, dep2, dep3]);
+
