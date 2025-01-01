@@ -114,3 +114,17 @@ REACT HOOKS TUTORIAL
                 // code to run only once...
             }, []);
 
+# 10 - useEffect with cleanup
+    When a component is unmounted (i.e. removed from the DOM), it is necessary to cancel all subscriptions associated
+    with, remove the attached event listeners, and performing other cleanup functions. This helps to avoid memory leaks
+    in our applications. In class components, React provides the `componentWillUnmount()` lifecycle method to do just
+    that. However, in useEffect hook, we can return a function - the cleanup function - which is called just before the
+    component is unmounted.
+        >>> Syntax:
+            useEffect()  => {
+                // effects to run...
+
+                return () => {
+                    // perform cleanup actions...
+                }
+            }, []);
