@@ -22,3 +22,22 @@ REACT HOOKS TUTORIAL
         the introduction of hooks do not replace your existing knowledge of various React concepts.
         - can be used along with class components in a React applications. Classes won't be removed from React anytime
         soon.
+
+# 2 - useState Hook
+    The first hook we'll talk about is the `useState` hook which allows us to create and manage state within functional
+    components. The `useState` hook is function which accepts the initial state value amd returns an array which has
+    two elements, the first is the state value and the second is a function to update the state.
+        >>> const [count, setCount] = useState(0);
+    It is a common convention to use array destructing to set the state variable value and the state update function.
+    The naming pattern/convention widely used is `varName` for the state variable and `setVarName` for the state update
+    function.
+    To update the state value, the new value is passed to the state update function as argument, as in:
+        >>> setCount(count + 1);
+    How does it work:
+        - When the component is created, the state variable is set to the value passed into `setCount()`.
+        - When the state is changed (or updated), the component re-renders.
+        - On re-rendering, count now takes on the new (i.e. updated) value.
+
+    Rules of Hooks: General rules to consider when making use of any hook are:
+        - Only call hooks at the top level - don't call them inside loops, conditions, or nested functions.
+        - Only call hooks from React functions - and not just any regular JS function.
