@@ -83,3 +83,14 @@ REACT HOOKS TUTORIAL
     therefore, a close (all-in-one) replacement for the `componentDidMount`, `componentDidUpdate` and
     `componentWillUnMount` lifecycle methods.
 
+# 7 - useEffect after render
+    The `useEffect` hook, like `useState` is JS function. It accepts a function as an argument - the function being the
+    effect you want to make. The function contains the code you want to execute after every render (whether initial
+    render or subsequent (or re-) renders).
+        >>> Syntax:
+            useEffect(() => {
+                // effect goes here...
+            });
+    Since the `useEffect` is used directly in the component, you can access the props or state directly without writing
+    additional code. In the coming lessons, we'll explore how we can customise the useEffect hook to only execute our
+    effect when we need it to do so instead of after every render.
