@@ -63,4 +63,11 @@ REACT HOOKS TUTORIAL
             // now name becomes {firstName: 'Hello'} leaving out the `lastName` property, use this syntax instead:
             setName({...name, firstName: 'Hello'});
 
+# 5 - useState with array
+    Similarly, when an array is used as a state value, the new value added to the array is not merged/appended to the
+    previous state value (array). The spread operator should be used to include the previous items before adding the new
+    items.
+    >>> Syntax:
+        setItems([...items, newItem]);
+
 
