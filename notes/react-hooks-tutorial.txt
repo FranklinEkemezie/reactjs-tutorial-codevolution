@@ -70,4 +70,16 @@ REACT HOOKS TUTORIAL
     >>> Syntax:
         setItems([...items, newItem]);
 
+# 6 - useEffect Hook.
+        useEffect hook allows us to cause side effects without using lifecycle methods in class components. In class
+    components, the lifecycle methods provide a way to "hook" into the lifecycle of the component and perform certain
+    actions, as at when due. The `componentDidMount()`, `componentDidUpdate()` and `componentWillUnmount()` are suitable
+    and common places to place codes which may cause side effects e.g. interacting with the DOM, or making HTTP requests.
+    However, it leads to grouping unrelated codes together, just for the only reason that we want them to run when the
+    component is mounted or updated. Also, if we wish to perform an action when the component is mounted and also when
+    it is updated, we'd have to write (split) them in separate code blocks.
+        The `useEffect` hook provides a way to cause side effects while allowing related codes to be grouped together as
+    well as avoid repeating the same block of codes, hence resulting in more organised and readable code. It is
+    therefore, a close (all-in-one) replacement for the `componentDidMount`, `componentDidUpdate` and
+    `componentWillUnMount` lifecycle methods.
 
