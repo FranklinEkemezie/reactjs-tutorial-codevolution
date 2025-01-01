@@ -41,3 +41,15 @@ REACT HOOKS TUTORIAL
     Rules of Hooks: General rules to consider when making use of any hook are:
         - Only call hooks at the top level - don't call them inside loops, conditions, or nested functions.
         - Only call hooks from React functions - and not just any regular JS function.
+
+# 3 - useState with previous state
+    A slightly different version of the state update function returned by `useState()` accepts a function argument
+    instead of the updated value of the state variable. This function returns the new state value. This version should
+    bse used when the new state value of a state variable depends on its previous state e.g. negating the (boolean) state value,
+    or increasing count. This is because, the state update function batches multiple calls into one to enhance
+    performance and may lead to UI bugs (since the state does not update as many times as it should). Passing in a
+    function which returns the new state is a good approach to always ensure that the previous state is always updated
+    before it is used in the next update function call.
+    Syntax:
+        >>> setCount(() => count + 1);
+
