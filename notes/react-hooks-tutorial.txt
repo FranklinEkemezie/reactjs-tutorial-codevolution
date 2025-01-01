@@ -105,3 +105,12 @@ REACT HOOKS TUTORIAL
                 // code to run only when any of the dependencies changes...
             }, [dep1, dep2, dep3]);
 
+# 9 - Run effects only once
+    Much like in `componentDidMount()` lifecycle method, we may wish to run an effect only once e.g. adding event
+    listeners. To replicate this in the `useEffect` hook, an empty array is passed as the dependency parameter. This
+    effectively instructs React to run the effect only once on initial render.
+        >>> Syntax:
+            useEffect(() => {
+                // code to run only once...
+            }, []);
+
