@@ -53,3 +53,14 @@ REACT HOOKS TUTORIAL
     Syntax:
         >>> setCount(() => count + 1);
 
+# 4 - useState with object
+    Since the setter (state update) function provided by `useState()` hook overwrites the previous state value to the
+    new one, the previous object is not merged with/included in the new object when the state value is an object. The
+    spread operator (...) is therefore used to include the previous properties along with the newly updated one.
+    For example:
+        >>> const [name, setName] = useState({firstName: '', lastName: ''});
+        >>> setName({firstName: 'Hello'});
+            // now name becomes {firstName: 'Hello'} leaving out the `lastName` property, use this syntax instead:
+            setName({...name, firstName: 'Hello'});
+
+
