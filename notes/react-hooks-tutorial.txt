@@ -1,3 +1,24 @@
 REACT HOOKS TUTORIAL
 
-#
+# 1 - Introduction
+    Prerequisites - Basics of React, functional and class components, props, state, etc.
+    What are Hooks - Hooks are a new feature addition in React version 16.8 which allow you to use React features
+    without having to write a class. With hooks, we can create functional components which can manage their own
+    states, and also be able to "hook" into other React features.
+    Why Hooks?
+        - Avoid the use of `this` keyword - thus, preventing the pain in understanding how the `this` keyword works; you
+        don't also need to bind event handlers; and classes in general do not minify very well, and make hot reloading
+        unreliable.
+        - Provides a way to reuse stateful component logic since HOC and render props pattern, while they are useful
+        often forces one to restructure the code, making it harder to read.
+        - Using lifecycle methods leads to grouping unrelated codes in one block of code, while related ones are
+        scattered in different lifecycle methods, making complex class components become unreadable. Hooks allow you to
+        group related in smaller functions, thus components can efficiently be broken to even smaller ones, when needed.
+    Note that: React Hooks
+        - are available in React version 16.8 or higher.
+        - are completely opt in and backward compatible (no breaking changes).
+        - do not work inside a class component.
+        - provide a more direct API to the React concepts you already know - state, context, refs, effects, etc. Hence,
+        the introduction of hooks do not replace your existing knowledge of various React concepts.
+        - can be used along with class components in a React applications. Classes won't be removed from React anytime
+        soon.
