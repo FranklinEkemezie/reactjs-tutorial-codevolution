@@ -250,8 +250,42 @@ REACT HOOKS TUTORIAL
         const username  = useContext(UserContext);
         const channel   = useContext(ChannelContext);
 
-    (See 'hello-world/src/components/HookComponentE.js' (for the older way) as well as
-    './hello-world/src/react-hooks-tutorial/components/HookComponentE.js' (for the "hook" way)
+    (See '../hello-world/src/components/HookComponentE.js' (for the older way) as well as
+    '../hello-world/src/react-hooks-tutorial/components/HookComponentE.js' (for the "hook" way)
+
+# 18 - useReducer Hook.
+    useReducer Hook is a hook that is used for state management in React. We have already seen that useState is used for
+    state management; useReducer is an alternative to useState. Under the hood, the useState is built using useReducer,
+    thus, we can say the useReducer is more primitive form of useState.
+    Just like useState hook is related to state, useEffect to side effects, and useContext to Context API, the
+    useReducer has a thing to do with reducers. Reducers, generally speaking, are functions which takes a series of
+    values (e.g. an array of values), performs an action and a returns a single value. A commonly use case of reducer is
+    in the Array.prototype.reduce() method. This method accepts and executes a reducer function (which you provide) on
+    each element of the array, resulting in a single output value. The reducer method works with two parameters, an
+    accumulator - which holds the single value accumulated so far, and the current value of iteration of the array. An
+    initial value is also provided to the reduce() method to determine the initial value it should work with.
+        >>> Syntax:
+            const reducer = (accumulator, currentValue) => {
+                // block of codes...
+                return someValue;
+            }
+            const reducedValue = arr.reduce(reducer, initialValue);
+    Understanding the concept of reducer functions helps in understanding the `useReducer` hook.
+    Comparing the reduce function in JavaScript and the useReducer in React, we note the following points:
+        - While reduce() is found in vanilla JavaScript, useReducer() is found in React.
+        - Syntax: For reduce - array.reduce(reducer, initialValue); For useReducer - useReducer(reducer, initialState)
+        - The reducer in reduce() works with an accumulator and the current item value of iterator and returns a single
+        value, while that of useReducer takes in the current state and action and returns the new state.
+            >>> Syntax:
+                singleValue = reducer(accumulator, itemValue)       // reduce()
+                newState = reducer(currentState, action)            // useReducer()
+        - The reduce() method returns a single value, while the `useReducer()` returns a pair of values - the new state
+        and a dispatch.
+    To sum up, the `useReducer()` hook changes the state using a `reducer` function.
+    In the next couple of lessons, we'll explore how to as well as when to make use of `useReducer` hooks.
+
+
+
 
 
 
