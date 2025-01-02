@@ -191,3 +191,53 @@ REACT HOOKS TUTORIAL
     manually at every level. Prior to hooks, `React.createContext()` was used to create a context which can be provided
     and consumed in any component. Hooks brings the `useContext()`, an easier and more direct way to make use of the
     context. In the next lesson, we'll explore how to make use of the `useContext` hook.
+
+# 16 - useContext Hook Part 2
+    In this lesson, we'll briefly revise the way the Context API was used before the introduction of Hooks.
+    (Refer to React JS Tutorial Lesson 38 - 40 for in-depth review on the use of Context API).
+    To pass down props through the component tree, we'll follow the steps:
+        - Create the context in a higher/ancestor component (e.g `App` component) using the `React.createContext()`
+        method. It returns a `Context` object with two properties that are important to us: the `Provider` object and
+        the `Consumer` object.
+            >>> UserContext = React.createContext();
+        - Provide a value for the context, using the `Provider` object. You could do this by passing it as an argument
+        when the context is being created or to the "value" prop of the `Provider`. The `Provider` will wrap the
+        component which is an ancestor to all (deeply nested) components which may need to consume the context value.
+            >>> <UserContext.Provider value="John Doe">
+                    <ComponentC/>
+                </UserContext.Provider>
+        - Lastly, consume the context value using the `Consumer` object and the render props pattern. In the component
+        where the context value is to be consumed, a function which accepts the context value as argument and returns a
+        JSX describing a UI in which the context value is used is wrapped by the `Consumer` object.
+        (Tip: This is a modified form of the render props pattern)
+            >>> <UserContext.Consumer>
+                    {
+                        username => (
+                            <div>Hello, {username}</div>
+                        )
+                    }
+                </UserContext.Consumer>
+        While this solves the problem preventing us from drilling the props down through the component tree, we tend to
+        write even more verbose code. If we had to consume one more contexts, we might need to nest these contexts in
+        each other, which leads to lengthy, but unnecessary code. If for example, we have a ChannelContext to also
+        consume, the last code would quickly evolve to something like this.
+            >>> Example:
+                <UserContext.Consumer>
+                    {
+                        username => (
+                            <ChannelContext.Consumer>
+                                {
+                                    channel => (
+                                        <div>Hello, {username} from {channel}</div>
+                                    )
+                                }
+                            </ChannelContext>
+                        )
+                    }
+                </UserContext.Consumer>
+        Now consider, if we had even more to consume, our code becomes lengthy too. That's the issue the context hook
+        deals with. With the `useContext` hook we can make use of the Context API while write better, concise codes.
+
+
+
+
