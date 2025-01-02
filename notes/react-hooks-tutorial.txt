@@ -163,5 +163,11 @@ REACT HOOKS TUTORIAL
     unsubscribe when the component is unmounted. This particular example has a simple code representation on the
     official React documentation @ https://reactjs.org/docs/hooks-effect.html#//dash_ref_515/Section/Tip%253A%2520Use%2520Multiple%2520Effects%2520to%2520Separate%2520Concerns/0
 
+# 12 - Fetching data with useEffect Part 1
+    A good use case of the `useEffect` hook is fetching data from API endpoints. This is done in a similar as it is done
+    using the `componentDidMount` lifecycle methods. You should also pass an empty dependency array to ensure that the
+    effect only runs to prevent infinite rendering loop when the state is being updated in the effect triggering the
+    component to re-render which may again call the effect.
+    See example @ ../hello-world/src/react-hooks-tutorial/components/DataFetching.js
 
 
