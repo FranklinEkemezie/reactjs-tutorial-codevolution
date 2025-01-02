@@ -306,6 +306,18 @@ REACT HOOKS TUTORIAL
     NB: The initial state can be almost anything from primitive types - number, string, booleans, etc. to even complex
     types - arrays, objects, etc.
 
+# 20 - useReducer (complex state & action)
+    The aim of this lesson is to demonstrate how to manage complex (object type) state using `useReducer` hook as well
+    as a complex (object type) action. The procedure and syntax remains the same as before. You should, however remember
+    to merge the properties of the previous state with the new one using the spread operator.
+    - Using complex (object type) action allows us to pass extra "action" information to make state management and
+    update even more flexible and dynamic.
+    - On the other hand, using complex (object type)  allows us to manage multiple state variables as properties of one
+    object. This is commonly used to manage global states.
+    (See ../hello-world/src/react-hooks-tutorial/components/CounterTwo.js for demo)
+
+
+
 
 
 
