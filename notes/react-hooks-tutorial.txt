@@ -235,11 +235,23 @@ REACT HOOKS TUTORIAL
                         )
                     }
                 </UserContext.Consumer>
+        (See ComponentC, ComponentE.js, ComponentF.js in the `../hello-world/src/components/` folder as well as the
+        App component for a full code example).
         Now consider, if we had even more to consume, our code becomes lengthy too. That's the issue the context hook
         deals with. With the `useContext` hook we can make use of the Context API while writing better, concise codes.
         We'll see how to do just that in the next lesson.
 
 # 17 - useContext Hook Part 3
+    With useContext hook, the first two steps - creating the context via React.createContext() and using the `Provider`
+    object to provide the context value remain the same. The useContext is used to simplify how the context is consumed.
+    To do that, the `useContext()` function from 'react' is used which accepts the Context to consume as the value.
+    The `useContext` function then returns the context value - which you can use straightaway - as easy as that.
+    >>> Example:
+        const username  = useContext(UserContext);
+        const channel   = useContext(ChannelContext);
+
+    (See 'hello-world/src/components/HookComponentE.js' (for the older way) as well as
+    './hello-world/src/react-hooks-tutorial/components/HookComponentE.js' (for the "hook" way)
 
 
 
