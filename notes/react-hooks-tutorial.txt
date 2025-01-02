@@ -185,3 +185,9 @@ REACT HOOKS TUTORIAL
     attached to the fetch URL/endpoint, when a response is returned successfully, the new state of another state
     variable managing is updated causing a re-render. As before the `useEffect` hook would depend on the state value
     attached to the fetch URL required to trigger an API call.
+
+# 15 - useContext Hook Part 1
+    As we already know, Context provides a way to pass data through the component tree without having to pass props down
+    manually at every level. Prior to hooks, `React.createContext()` was used to create a context which can be provided
+    and consumed in any component. Hooks brings the `useContext()`, an easier and more direct way to make use of the
+    context. In the next lesson, we'll explore how to make use of the `useContext` hook.
