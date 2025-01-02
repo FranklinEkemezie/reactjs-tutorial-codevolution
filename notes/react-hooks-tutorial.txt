@@ -128,3 +128,40 @@ REACT HOOKS TUTORIAL
                     // perform cleanup actions...
                 }
             }, []);
+
+# 11 - useEffect with incorrect dependency
+    Although, useEffect is a close replacement of the lifecycle methods suitable for causing side effects i.e. the
+    `componentDidMount`, `componentDidUpdate` and `componentWillUnMount` lifecycle methods, replicating your code in the
+    same manner and with the same mental model used in the lifecycle methods in useEffect hook may introduce some bugs
+    since there's a subtle difference on how both of them work.
+    For example, let's say we want to set up an interval counter which increments a counter after some interval and
+    update the UI. In class components, we set up the interval once in `componentDidMount` and clear it when the
+    component unmounts in `componentWillUnMount` so that as the `count` state variable is updated, the component is
+    re-rendered; each time with the updated value. To replicate this in functional components using the `useEffect` hook,
+    we simply set up the interval in the hook and return a cleanup function that clears the interval and since we want
+    these to run only once, we specify an empty array as a dependency - and this may lead to bugs. This is because:
+        "The dependency array is not used to tell the useEffect hook when to or when not to run the effects.
+        It is used to tell the useEffect hook which variables to watch for changes and then run the effects"
+    Therefore, in our example, we should include the state `count` to explicitly tell React: "Hey, watch out for my
+    `count` variable, and do run the effect any time it changes". This is equivalent to add the `componentDidUpdate`
+    method in class component to run the effect if the count has changed so far.
+    The difference is considered subtle, since React will always run the effect even if the state `count` variable is
+    not explicitly included in the dependency array when the state `count` variable is being updated using the second
+    version of the React i.e. the one that accepts a function argument which returns the updated state.
+    However, it is important that values like `props` which are used in the effect; and we want the effect hook to watch
+    out for them to be included as part of the dependency array.
+    It is also recommended to write one-off functions which should run in effect hooks inside the effect hooks so that
+    is clear enough which values are needed in the effect hook and therefore, consider if they should be specified in
+    the dependency array.
+    In addition, it is okay to have multiple `useEffect` hook in one component. This allows different block of codes to
+    be grouped separately in different `useEffect` so that related code are only placed with each other. Usually, if we
+    wish to run different effects associated with different state variables, we can have `useEffect` calls for each one,
+    right after the state is created using the `useState` hook. For example, say we have a component which increments
+    count and modifies the browser title; and also subscribes a user's friend online status to check whether they are
+    online of offline. We can create the `count` state variable, have an effect update the browser title each time the
+    component is rendered and another `isOnline` state variable, and an effect to subscribe to the friend's status and
+    unsubscribe when the component is unmounted. This particular example has a simple code representation on the
+    official React documentation @ https://reactjs.org/docs/hooks-effect.html#//dash_ref_515/Section/Tip%253A%2520Use%2520Multiple%2520Effects%2520to%2520Separate%2520Concerns/0
+
+
+
