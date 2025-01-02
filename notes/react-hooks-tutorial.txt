@@ -179,3 +179,9 @@ REACT HOOKS TUTORIAL
     See example @ ../hello-world/src/react-hooks-tutorial/components/DataFetching.js (updated)
     Tip: You should also handle network request errors properly and render and fallback or default UI as need may be.
 
+# 14 - Fetching data with useEffect Part 3
+    The purpose of this lesson is to make API request to retrieve a single data when a click event is fired using the
+    `useEffect` hook. Similar to the previous lesson, the event handler sets the state value of the input which is then
+    attached to the fetch URL/endpoint, when a response is returned successfully, the new state of another state
+    variable managing is updated causing a re-render. As before the `useEffect` hook would depend on the state value
+    attached to the fetch URL required to trigger an API call.
