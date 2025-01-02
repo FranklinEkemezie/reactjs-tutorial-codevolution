@@ -170,4 +170,12 @@ REACT HOOKS TUTORIAL
     component to re-render which may again call the effect.
     See example @ ../hello-world/src/react-hooks-tutorial/components/DataFetching.js
 
+# 13 - Fetching data with useEffect Part 2
+    In this lesson, our focus is fetching single data from an endpoints. For example, we might want to get a single post
+    from an endpoint like, www.example.com/posts/{id} where `id` is the id of the post to retrieve. We probably may have
+    a `post` state variable and also a `useEffect` to make the API call. If the `id` is supplied dynamically (e.g. by
+    the user via input), you should make sure the `useEffect` hook watches out for the `post` state variable so that the
+    UI is updated when the `id` changes.
+    See example @ ../hello-world/src/react-hooks-tutorial/components/DataFetching.js (updated)
+    Tip: You should also handle network request errors properly and render and fallback or default UI as need may be.
 
