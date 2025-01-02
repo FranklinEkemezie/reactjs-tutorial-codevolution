@@ -316,6 +316,22 @@ REACT HOOKS TUTORIAL
     object. This is commonly used to manage global states.
     (See ../hello-world/src/react-hooks-tutorial/components/CounterTwo.js for demo)
 
+# 21 - Multiple useReducers
+    When you have two or more state variables which undergo the same state transition, it means that they have the same
+    piece of code for their `reducer` function. It is a good practice to use multiple reducers whenever two or more
+    state variables have the same transitions while passing the same reducer function to both.
+        >>> Syntax:
+            const initialStateOne = ...;
+            const initialStateTwo = ...;
+
+            const [stateOne, dispatchOne] = useReducer(reducer, initialStateOne);
+            const [stateTwo, dispatchTwo] = useReducer(reducer, initialStateTwo);
+    (See code example: ../hello-world/src/react-hooks-tutorial/components/CounterThree.js)
+    (Compare with code repetition found in ../hello-world/src/react-hooks-tutorial/components/CounterTwo.js
+    for the `firstCounter` and `secondCounter` state update).
+
+
+
 
 
 
