@@ -236,8 +236,10 @@ REACT HOOKS TUTORIAL
                     }
                 </UserContext.Consumer>
         Now consider, if we had even more to consume, our code becomes lengthy too. That's the issue the context hook
-        deals with. With the `useContext` hook we can make use of the Context API while write better, concise codes.
+        deals with. With the `useContext` hook we can make use of the Context API while writing better, concise codes.
+        We'll see how to do just that in the next lesson.
 
+# 17 - useContext Hook Part 3
 
 
 
