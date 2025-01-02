@@ -284,6 +284,28 @@ REACT HOOKS TUTORIAL
     To sum up, the `useReducer()` hook changes the state using a `reducer` function.
     In the next couple of lessons, we'll explore how to as well as when to make use of `useReducer` hooks.
 
+# 19 - useReducer (simple state & action).
+    In this lesson, we will talk about how to manage a simple state using the `useReducer` hook.
+    To do that we follow the procedures below:
+        - Create the state variable using the `useReducer()` function from 'react'. This function accepts a reducer as
+        the first argument and an initial state and returns an array of two items - the state variable count, and a
+        dispatch function.
+            >>> Syntax:
+                const [count, dispatch] = useReducer(reducer, initialState);
+        - The reducer function takes in the current state value and action and returns a new state depending on the
+        action. The switch statement is commonly used to decide which new state is returned given a particular action.
+        - The dispatch function returned by the `useReducer` function is what allows us to dispatch (or execute) some
+        action depending on the argument passed to it.
+    In our counter example, in "../hello-world/src/react-hooks-tutorial/components/CounterOne.js":
+        - The initial state is set to zero (0).
+        - The reducer function will accept the (current) state and action and increments, decrements or resets the count
+        (state) value depending on the action and returns this new state.
+        - The value of the state variable is stored in `count` while the `dispatch` allows us to dispatch (or execute)
+        an increment, decrement, or reset to the `count` state variable depending on the argument passed to it each time
+        the button is clicked.
+    NB: The initial state can be almost anything from primitive types - number, string, booleans, etc. to even complex
+    types - arrays, objects, etc.
+
 
 
 
